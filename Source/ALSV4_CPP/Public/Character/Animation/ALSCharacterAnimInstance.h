@@ -19,6 +19,8 @@ class UCurveVector;
 
 /**
  * Main anim instance class for character
+ * NOTE: ULyraAnimInstance can't be used as a parent. No idea why
+ * Maybe I'll write a interface to deal with this, if necessary.
  */
 UCLASS(Blueprintable, BlueprintType)
 class ALSV4_CPP_API UALSCharacterAnimInstance : public UAnimInstance

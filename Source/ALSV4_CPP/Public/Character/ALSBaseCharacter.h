@@ -10,6 +10,8 @@
 #include "Library/ALSCharacterStructLibrary.h"
 #include "Engine/DataTable.h"
 #include "GameFramework/Character.h"
+#include "GameplayCueInterface.h"
+#include "LyraGame/Character/LyraCharacter.h"
 
 #include "ALSBaseCharacter.generated.h"
 
@@ -25,9 +27,17 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRagdollStateChangedSignature, bool,
 
 /*
  * Base character class
+ * NOTE: Now inherits from ALyraCharacter
+ * This is significant because 
+ * 1. the parent implements IAbilitySystemInterface, IGameplayCueInterface, IGameplayTagAssetInterface
+ * 2. That dependency now makes this fork of ALS dependent on Epic's GameplayAbility System. 
+ * 3. To ressolve linker errors, GameplayTags,GameplayTasks,GameplayAbilities had to be added to the ALS build.cs and uplugin. Otherwise was project won't compile
+ * 4. While ALS doesn't use the gameplay ability system, this dependency is now necessary for integration. 
+ * 
+ * TODO: Resolve any awkward redundances between Lyra and ALS characters and their movement components, and figure out if how Lyra handles acceleration replication will be an issue....
  */
 UCLASS(BlueprintType)
-class ALSV4_CPP_API AALSBaseCharacter : public ACharacter
+class ALSV4_CPP_API AALSBaseCharacter : public ALyraCharacter
 {
 	GENERATED_BODY()
 
@@ -416,6 +426,10 @@ protected:
 
 	UFUNCTION(Category = "ALS|Replication")
 	void OnRep_VisibleMesh(const USkeletalMesh* PreviousSkeletalMesh);
+
+
+
+
 
 protected:
 	/* Custom movement component*/

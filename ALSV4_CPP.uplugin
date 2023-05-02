@@ -24,6 +24,8 @@
 				"Engine",
 				"AIModule",
 				"GameplayTasks",
+				"GameplayTags",
+				"GameplayAbilities",
 				"PhysicsCore",
 				"LyraGame"
 			]
@@ -36,6 +38,10 @@
 		},
 		{
 			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
 			"Enabled": true
 		}
 	]
