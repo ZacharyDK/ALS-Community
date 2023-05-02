@@ -4,7 +4,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/CharacterMovementComponent.h"
+//#include "GameFramework/CharacterMovementComponent.h"
+#include "Character/LyraCharacterMovementComponent.h"
 #include "Library/ALSCharacterStructLibrary.h"
 
 #include "ALSCharacterMovementComponent.generated.h"
@@ -13,7 +14,7 @@
  * Authoritative networked Character Movement
  */
 UCLASS()
-class ALSV4_CPP_API UALSCharacterMovementComponent : public UCharacterMovementComponent
+class ALSV4_CPP_API UALSCharacterMovementComponent : public ULyraCharacterMovementComponent
 {
 	GENERATED_UCLASS_BODY()
 

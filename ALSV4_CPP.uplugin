@@ -24,7 +24,8 @@
 				"Engine",
 				"AIModule",
 				"GameplayTasks",
-				"PhysicsCore"
+				"PhysicsCore",
+				"LyraGame"
 			]
 		}
 	],
