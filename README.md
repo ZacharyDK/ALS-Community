@@ -1,3 +1,12 @@
+# ALS Lyra fork.
+-This fork is meant to be shoved into a Lyra project, in the plugin folder.
+-Major changes
+-Added Rigs, for anim man and lyra retargeting
+-ALSBaseCharacter now parented to Lyra character
+-ALSCharacterMovementComponent now parented to LyraCharacterMovementComponent
+-Added LyraGame dependency to plugin. 
+-Add GAS dependencies to ALS
+
 # Advanced Locomotion System - Community Version
 ![image](https://github.com/dyanikoglu/ALS-Community/raw/main/Resources/Readme_Content_2.gif)
 
